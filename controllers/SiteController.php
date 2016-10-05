@@ -32,6 +32,18 @@ class SiteController extends Controller
     }
 
 
+    /**
+     * @return array
+     */
+    public function actions()
+    {
+        return [
+            'error' => [
+                'class' => 'yii\web\ErrorAction',
+            ],
+        ];
+    }
+
 
     /**
      * Displays homepage.
@@ -54,7 +66,7 @@ class SiteController extends Controller
         Yii::$app->session->set('test', $data);
     }
 
-    public function actionError($msg)
+    private function actionError($msg)
     {
         return[
             'message' => $msg,
