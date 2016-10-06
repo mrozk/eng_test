@@ -1,0 +1,20 @@
+<div class="col-sm-8">
+    <div class="form-group">
+        <h3>Правильных ответов {{$ctrl.score}}, неправильных {{$ctrl.errors}}</h3>
+    </div>
+    <div class="form-group">
+        <h3>Перевод слова {{$ctrl.currentValue}}</h3>
+    </div>
+    <div class="form-group">
+        <div ng-show="$ctrl.moreTry" style="color: red">Значение введено неверно, попробуйте еще раз</div>
+    </div>
+
+    <div class="form-group" data-ng-repeat="(x, y) in $ctrl.variants">
+        <label >
+            <input type="radio" ng-model="$ctrl.answer" ng-value="x"/> {{y}}
+        </label>
+    </div>
+    <div class="form-group">
+        <button ng-click="$ctrl.check()" class="btn btn-md btn-success">Далее</button>
+    </div>
+</div>
